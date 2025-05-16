@@ -19,13 +19,20 @@ mosdepth --threads ${THREADS}          \
 	--by data/bed/${BED}           \
 	--fasta data/ref/${REF}        \
 	${MOSDEPTH_DIR}/${SAMPLE}      \
-	data/cram/${CRAM} 2> ${LOGDIR}/mosdepth.log
+	data/cram/${CRAM} \
+	2> ${LOGDIR}/mosdepth.log
 
 python src/calc_coverage.py --sample ${SAMPLE} \
 	--input-dir results/mosdepth \
-	--output-dir results/coverage
+	--output-dir results/coverage \
+	2> ${LOGDIR}/calc_coverage.log
 
 # Sex inference
+python src/estimate_sex.py --sample ${SAMPLE} \
+	--input-dir results/mosdepth \
+	--output-dir results/sex_inference \
+	2> ${LOGDIR}/estimate_sex.log
+
 
 # Contamination estimation
 
