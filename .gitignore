@@ -2,3 +2,4 @@ data/
 temp/
 logs/
 results/
+__pycache__/
