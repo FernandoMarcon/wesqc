@@ -7,14 +7,16 @@ set -e
 set -u
 set -o pipefail
 
-CRAM_URL="http://ftp.1000genomes.ebi.ac.uk/vol1/ftp/data_collections/1000_genomes_project/data/CEU/NA06994/exome_alignment/NA06994.alt_bwamem_GRCh38DH.20150826.CEU.exome.cram"
+CRAM_URL="http://ftp.1000genomes.ebi.ac.uk/vol1/ftp/data_collections/1000_genomes_project/data/CEU/NA06994/exome_alignment"
+CRAM_FILE="NA06994.alt_bwamem_GRCh38DH.20150826.CEU.exome.cram"
 BED_URL="https://www.twistbioscience.com/resources/data-files/twist-exome-20-bed-files"
+BED_FILE="hg38_exome_v2.0.2_targets_sorted_validated.re_annotated.bed"
 
 # Download files
 mkdir -p data/{cram,bed}
-wget -P data/cram/ $CRAM_URL
-wget -P data/cram/ "$CRAM_URL.crai"
-wget -P data/bed/ $BED_URL
+wget -P data/cram/ $CRAM_URL/$CRAM_FILE 
+wget -P data/cram/ "$CRAM_URL/$CRAM_FILE.crai"
+wget -P data/bed/ $BED_URL/$BED_FILE
 
 
 # Expected MD5 hashes
@@ -46,8 +48,8 @@ check_md5() {
 
 
 # Check MD5 hashes
-check_md5 "$CRAM_FILE" "$EXPECTED_CRAM_MD5"
-check_md5 "$CRAM_FILE.crai" "$EXPECTED_CRAI_MD5"
-check_md5 "$BED_FILE" "$EXPECTED_BED_MD5"
+check_md5 "data/cram/$CRAM_FILE" "$EXPECTED_CRAM_MD5"
+check_md5 "data/cram/$CRAM_FILE.crai" "$EXPECTED_CRAI_MD5"
+check_md5 "data/bed/$BED_FILE" "$EXPECTED_BED_MD5"
 
 echo "All input files validated successfully!" 
