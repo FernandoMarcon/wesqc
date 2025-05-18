@@ -9,7 +9,7 @@ set -o pipefail
 
 CRAM_URL="http://ftp.1000genomes.ebi.ac.uk/vol1/ftp/data_collections/1000_genomes_project/data/CEU/NA06994/exome_alignment"
 CRAM_FILE="NA06994.alt_bwamem_GRCh38DH.20150826.CEU.exome.cram"
-BED_URL="https://www.twistbioscience.com/resources/data-files/twist-exome-20-bed-files"
+BED_URL="https://www.twistbioscience.com/sites/default/files/resources/2022-12/"
 BED_FILE="hg38_exome_v2.0.2_targets_sorted_validated.re_annotated.bed"
 
 # Download files
