@@ -14,7 +14,7 @@ BED_FILE="hg38_exome_v2.0.2_targets_sorted_validated.re_annotated.bed"
 
 # Download files
 mkdir -p data/{cram,bed}
-wget -P data/cram/ $CRAM_URL/$CRAM_FILE 
+#wget -P data/cram/ $CRAM_URL/$CRAM_FILE 
 wget -P data/cram/ "$CRAM_URL/$CRAM_FILE.crai"
 wget -P data/bed/ $BED_URL/$BED_FILE
 
