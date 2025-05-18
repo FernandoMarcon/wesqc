@@ -1,0 +1,14 @@
+name: wesqc
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - python=3.9
+  - snakemake=7.32.4
+  - mosdepth=0.3.3
+  - verifybamid2=2.0.1
+  - pip
+  - pip:
+    - pandas
+    - numpy 

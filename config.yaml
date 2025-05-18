@@ -1,0 +1,18 @@
+suffix: ".alt_bwamem_GRCh38DH.20150826.CEU.exome"
+
+# Reference files
+ref: "GRCh38_full_analysis_set_plus_decoy_hla.fa"
+bed: "hg38_exome_v2.0.2_targets_sorted_validated.re_annotated.bed"
+
+# Resources
+threads: 5
+
+# Directories
+data_dir: "data"
+results_dir: "results"
+logs_dir: "logs"
+
+# Input directories
+cram_dir: "data/cram"
+ref_dir: "data/ref"
+bed_dir: "data/bed" 

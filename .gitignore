@@ -5,3 +5,5 @@ results/
 __pycache__/
 *.swp
 *.functions.py.swp
+logs/
+.snakemake/
