@@ -31,7 +31,7 @@ This pipeline performs automated quality control analysis on Whole Exome Sequenc
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
+git clone git@github.com:FernandoMarcon/wesqc.git
 cd wesqc
 ```
 
