@@ -14,7 +14,7 @@ BED_URL="https://www.twistbioscience.com/resources/data-files/twist-exome-20-bed
 mkdir -p data/{cram,bed}
 wget -P data/cram/ $CRAM_URL
 wget -P data/cram/ "$CRAM_URL.crai"
-wget -P data/bed/ $BED_URLew
+wget -P data/bed/ $BED_URL
 
 
 # Expected MD5 hashes
