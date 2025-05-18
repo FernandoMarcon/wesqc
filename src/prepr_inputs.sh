@@ -15,16 +15,16 @@ BED_URL="https://www.twistbioscience.com/sites/default/files/resources/2022-12/"
 BED_FILE="hg38_exome_v2.0.2_targets_sorted_validated.re_annotated.bed"
 
 REF_URL="ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/technical/reference/GRCh38_reference_genome"
-REF="GRCh38_full_analysis_set_plus_decoy_hla.fa"
+REF="GRCh38_full_analysis_set_plus_decoy_hla"
 
 
 # Download files
 mkdir -p data/{cram,bed,ref}
-#wget -O data/cram/$SAMPLE.cram $CRAM_URL/$CRAM_FILE 
+wget -O data/cram/$SAMPLE.cram $CRAM_URL/$CRAM_FILE 
 wget -O data/cram/$SAMPLE.cram.crai "$CRAM_URL/$CRAM_FILE.crai"
 wget -O data/bed/$BED_FILE $BED_URL/$BED_FILE
-wget -O data/ref/$REF $REF_URL/$REF
-wget -O data/ref/$REF.fai $REF_URL/$REF.fai
+wget -O data/ref/$REF $REF_URL/$REF.fa
+wget -O data/ref/$REF.fai $REF_URL/$REF.fa.fai
 wget -O data/ref/$REF.dict $REF_URL/$REF.dict
 
 # Expected MD5 hashes
