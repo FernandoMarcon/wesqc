@@ -11,11 +11,8 @@ ref = config["ref"]
 bed = config["bed"]
 
 # list files in data/cram that end with .cram
-suffix = config["suffix"]
-crams = [f.replace(".cram", "") for f in os.listdir(cram_dir) if f.endswith(".cram")]
-samples = [f.replace(suffix, "") for f in crams]
+samples = [f.replace(".cram", "") for f in os.listdir(cram_dir) if f.endswith(".cram")]
 print(samples)
-print(crams)
 
 rule all:
     input:
