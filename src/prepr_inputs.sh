@@ -14,7 +14,7 @@ BED_URL="https://www.twistbioscience.com/resources/data-files/twist-exome-20-bed
 mkdir -p data/{cram,bed}
 wget -P data/cram/ $CRAM_URL
 wget -O data/cram/ "$CRAM_URL.crai"
-wget -O data/bed/ $BED_URL
+wget -O data/bed/ $BED_URLew
 
 
 # Expected MD5 hashes
@@ -44,37 +44,10 @@ check_md5() {
     return 0
 }
 
-# Parse arguments
-while [[ $# -gt 0 ]]; do
-    case $1 in
-        --cram)
-            CRAM_FILE="$2"
-            shift 2
-            ;;
-        --crai)
-            CRAI_FILE="$2"
-            shift 2
-            ;;
-        --bed)
-            BED_FILE="$2"
-            shift 2
-            ;;
-        *)
-            echo "Unknown parameter: $1"
-            exit 1
-            ;;
-    esac
-done
-
-# Validate required arguments
-if [ -z "${CRAM_FILE:-}" ] || [ -z "${CRAI_FILE:-}" ] || [ -z "${BED_FILE:-}" ]; then
-    echo "Usage: $0 --cram <cram_file> --crai <crai_file> --bed <bed_file>"
-    exit 1
-fi
 
 # Check MD5 hashes
 check_md5 "$CRAM_FILE" "$EXPECTED_CRAM_MD5"
-check_md5 "$CRAI_FILE" "$EXPECTED_CRAI_MD5"
+check_md5 "$CRAM_FILE.crai" "$EXPECTED_CRAI_MD5"
 check_md5 "$BED_FILE" "$EXPECTED_BED_MD5"
 
 echo "All input files validated successfully!" 
