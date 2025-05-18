@@ -12,7 +12,6 @@ bed = config["bed"]
 
 # list files in data/cram that end with .cram
 samples = [f.replace(".cram", "") for f in os.listdir(cram_dir) if f.endswith(".cram")]
-print(samples)
 
 rule all:
     input:
