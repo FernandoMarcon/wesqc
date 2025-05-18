@@ -50,8 +50,8 @@ check_md5() {
 
 
 # Check MD5 hashes
-check_md5 "data/cram/$CRAM_FILE" "$EXPECTED_CRAM_MD5"
-check_md5 "data/cram/$CRAM_FILE.crai" "$EXPECTED_CRAI_MD5"
+check_md5 "data/cram/$SAMPLE.cram" "$EXPECTED_CRAM_MD5"
+check_md5 "data/cram/$SAMPLE.cram.crai" "$EXPECTED_CRAI_MD5"
 check_md5 "data/bed/$BED_FILE" "$EXPECTED_BED_MD5"
 
 echo "All input files validated successfully!" 
