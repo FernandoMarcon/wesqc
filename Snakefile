@@ -23,7 +23,7 @@ rule all:
 
 rule mosdepth:
     input:
-        cram = f"{cram_dir}/{{sample}}{suffix}.cram",
+        cram = f"{cram_dir}/{{sample}}.cram",
         ref = os.path.join(ref_dir, ref),
         bed = os.path.join(bed_dir, bed)
     output:
@@ -79,7 +79,7 @@ rule estimate_sex:
 
 rule contamination:
     input:
-        cram = f"{cram_dir}/{{sample}}{suffix}.cram",
+        cram = f"{cram_dir}/{{sample}}.cram",
         ref = os.path.join(ref_dir, ref),
         bed = os.path.join(bed_dir, bed)
     output:
