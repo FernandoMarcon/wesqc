@@ -13,4 +13,10 @@ logs_dir: "logs"
 # Input directories
 cram_dir: "data/cram"
 ref_dir: "data/ref"
-bed_dir: "data/bed" 
+bed_dir: "data/bed"
+
+# Sex inference thresholds
+sex_inference:
+  x_female_threshold: 0.9  # Expected ~1.0 for females (two X chromosomes)
+  x_male_threshold: 0.45   # Expected ~0.5 for males (one X chromosome)
+  y_threshold: 0.1         # Expected >0.1 for males, near 0 for females 

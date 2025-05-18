@@ -9,6 +9,7 @@ dependencies:
   - mosdepth=0.3.3
   - verifybamid2=2.0.1
   - pip
+  - pyyaml>=6.0.1
   - pip:
     - pandas
     - numpy 
